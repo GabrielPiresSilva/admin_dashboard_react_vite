@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Box,
   IconButton,
@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import { Link, useLocation } from "react-router-dom";
 
-import { Sidebar, Menu, MenuItem, SidebarProps } from "react-pro-sidebar";
+import { Sidebar, Menu, MenuItem } from "react-pro-sidebar";
 import { tokens } from "theme";
 
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
@@ -59,21 +59,8 @@ const SidebarMenu = () => {
 
   const [isCollapsed, setIsCollapsed] = useState(false);
 
-  // const [toggled, setToggled] = useState(true);
   const { menuToggleMode, toggleMenu } = useCustomMaterialTheme();
   const isNonMobile: boolean = useMediaQuery("(min-width:600px)");
-
-  const sidebarConfigsProps: SidebarProps = useMemo(() => {
-    if (isNonMobile)
-      return {
-        collapsed: isCollapsed,
-      };
-    return {
-      onBackdropClick: () => menuToggleMode(),
-      toggled: toggleMenu,
-      breakPoint: "always",
-    };
-  }, [toggleMenu]);
 
   useEffect(() => {
     setSelected(
