@@ -1,5 +1,3 @@
-import { AppThemeProvider } from "./theme";
-
 import { Route, Routes } from "react-router-dom";
 
 import Topbar from "./scenes/global/Topbar";
