@@ -1,30 +1,61 @@
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Logo do projeto](https://imgur.com/SYGQtij.jpg)
 
-Currently, two official plugins are available:
+# Dashboard Admin
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Project React + vite
 
-## Expanding the ESLint configuration
+## 🔥 Introduction
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+React + Vite project for study.
 
-- Configure the top-level `parserOptions` property like this:
+### ⚙️ Prerequisites
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+You need to have [Nodejs](https://nodejs.org/en) and [Git](https://git-scm.com/) installed
+
+### 🔨 Installation Guide
+
+To run the project, download it from Git and install it using npm
+
+Steps to install:
+
+```
+git clone https://github.com/GabrielPiresSilva/admin_dashboard_react_vite.git
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Step 2:
+
+```
+cd admin_dashboard_react_vite
+```
+
+Step 3:
+
+```
+npm install
+```
+
+Step 4:
+
+```
+npm run dev
+```
+
+## 📦 Technologies used:
+
+**Front-end:**
+
+- [React JS](https://react.dev/)
+- [Vite](https://vitejs.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+
+## 📚 Libraries:
+
+**Front-end:**
+
+- [Mui Material](https://mui.com/) - styling
+- [Formik](https://formik.org/) - form
+- [Yup](https://www.npmjs.com/package/yup) - validate form
+- [Fullcalendar](https://fullcalendar.io/) - calendar
+- [Nivo](https://nivo.rocks/) - charts

@@ -6,6 +6,7 @@ import { Sidebar, Menu, MenuItem } from "react-pro-sidebar";
 import { tokens } from "../../theme";
 
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
+import userDefault from "../../../public/assets/default-user.png";
 
 import { routes } from "../../routes";
 
@@ -119,7 +120,7 @@ const SidebarMenu = () => {
                   alt="profile-user"
                   width="100px"
                   height="100px"
-                  src="../../assets/user-default.svg"
+                  src={userDefault}
                   style={{ cursor: "pointer", borderRadius: "50%" }}
                 />
               </Box>
@@ -132,7 +133,7 @@ const SidebarMenu = () => {
                 >
                   User name
                 </Typography>
-                <Typography variant="h6" color={colors.greenAccent[500]}>
+                <Typography variant="h6" color={colors.greenAccent[400]}>
                   User role
                 </Typography>
               </Box>
