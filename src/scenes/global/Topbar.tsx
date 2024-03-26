@@ -1,6 +1,11 @@
-import { Box, IconButton, InputBase, useTheme } from "@mui/material";
-import { useContext } from "react";
-import { ColorModeContext, tokens } from "../../theme";
+import {
+  Box,
+  IconButton,
+  InputBase,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
+import { tokens } from "../../theme";
 
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
@@ -8,11 +13,15 @@ import NotificationsModeOutlinedIcon from "@mui/icons-material/NotificationsOutl
 import SettingsModeOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import PersonModeOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import SearchIcon from "@mui/icons-material/Search";
+import { useCustomMaterialTheme } from "contexts/theme-context";
+
+import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 
 const Topbar = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-  const colorMode = useContext(ColorModeContext);
+  const { toggleColorMode, menuToggleMode } = useCustomMaterialTheme();
+  const isNonMobile: boolean = useMediaQuery("(min-width:600px)");
 
   return (
     <Box display="flex" justifyContent="space-between" p={2}>
@@ -24,7 +33,12 @@ const Topbar = () => {
       </Box>
 
       <Box display="flex">
-        <IconButton onClick={colorMode.toggleColorMode}>
+        {!isNonMobile && (
+          <IconButton onClick={() => menuToggleMode()}>
+            <MenuOutlinedIcon />
+          </IconButton>
+        )}
+        <IconButton onClick={toggleColorMode}>
           {theme.palette.mode === "dark" ? (
             <LightModeOutlinedIcon />
           ) : (

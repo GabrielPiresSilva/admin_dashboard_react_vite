@@ -39,6 +39,7 @@ const BarChart = ({ isDashbard = false }) => {
           },
         },
       }}
+      animate={false}
       enableLabel={false}
       keys={["hot dog", "burger", "sandwich", "kebab", "fries", "donut"]}
       indexBy="country"

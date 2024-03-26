@@ -1,10 +1,4 @@
-import { createContext, useState, useMemo } from "react";
-import {
-  CssBaseline,
-  PaletteMode,
-  ThemeProvider,
-  createTheme,
-} from "@mui/material";
+import { PaletteMode, createTheme } from "@mui/material";
 
 // color design tokens
 export const tokens = (mode: string) => ({
@@ -195,43 +189,4 @@ export const themeSettings = (mode: PaletteMode) => {
       },
     },
   });
-};
-
-// context for color mode
-export const ColorModeContext = createContext({
-  toggleColorMode: () => {},
-});
-
-type modeThemeProps = "dark" | "light";
-export const useMode = () => {
-  const [mode, setMode] = useState<modeThemeProps>("dark");
-
-  const colormode = useMemo(
-    () => ({
-      toggleColorMode: () =>
-        setMode((prev: string) => (prev === "light" ? "dark" : "light")),
-    }),
-    []
-  );
-  const theme: any = useMemo(() => themeSettings(mode), [mode]);
-  return [theme, colormode];
-};
-
-// provider
-interface IAppThemeProviderProps {
-  children: React.ReactNode;
-}
-export const AppThemeProvider: React.FC<IAppThemeProviderProps> = ({
-  children,
-}) => {
-  const [theme, colorMode] = useMode();
-
-  return (
-    <ColorModeContext.Provider value={colorMode}>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <div className="app">{children}</div>
-      </ThemeProvider>
-    </ColorModeContext.Provider>
-  );
 };

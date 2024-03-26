@@ -1,15 +1,13 @@
-import { useState } from "react";
 import { AppThemeProvider } from "./theme";
 
 import { Route, Routes } from "react-router-dom";
 
 import Topbar from "./scenes/global/Topbar";
-import Sidebar from "./scenes/global/Sidebar";
+import Sidebar from "scenes/global/sidebar/Sidebar";
 import { RoutesProps, routes } from "./routes";
+import { AppProvider } from "contexts";
 
 function App() {
-  const [isSidebar, setIsSidebar] = useState(true);
-
   const getRoutes = (allRoutes: any[]) =>
     allRoutes.map((route: RoutesProps) => {
       // if (route.collapse) {
@@ -26,13 +24,15 @@ function App() {
     });
 
   return (
-    <AppThemeProvider>
-      <Sidebar />
-      <main className="content">
-        <Topbar />
-        <Routes>{getRoutes(routes)}</Routes>
-      </main>
-    </AppThemeProvider>
+    <AppProvider>
+      <div className="app">
+        <Sidebar />
+        <main className="content">
+          <Topbar />
+          <Routes>{getRoutes(routes)}</Routes>
+        </main>
+      </div>
+    </AppProvider>
   );
 }
 

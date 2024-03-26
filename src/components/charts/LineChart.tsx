@@ -40,6 +40,7 @@ const LineChart = ({ isDashboard = false }) => {
           },
         },
       }}
+      animate={false}
       colors={isDashboard ? { datum: "color" } : { scheme: "nivo" }}
       margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
       xScale={{ type: "point" }}
